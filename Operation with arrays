@@ -1,0 +1,32 @@
+import java.util.Random;
+public class Ex5 {
+    public static void main(String[] args) {
+        int[] ar1 = new int[100];
+        for(int i = 0; i <  ar1.length; i++) {
+            ar1[i] = (int)(Math.random() * 100);
+            System.out.print(ar1[i] + "  ");
+        }
+        Integer successionLength = 0;
+        Integer max = -1;
+        Integer maxDiff = 0;
+        for(int i = 0; i <  ar1.length; i++) {
+            if(ar1[i] % 2 == 0) {
+                successionLength ++ ;
+
+            } else {
+                if (max < successionLength) {
+                    max = successionLength;
+                }
+
+                successionLength = 0;
+
+            }
+            if (i <  ar1.length -1 && Math.abs(ar1[i] - ar1[i+1]) > maxDiff){
+                maxDiff = Math.abs(ar1[i] - ar1[i+1] );
+            }
+        }
+        System.out.println();
+        System.out.println("Afiseaza maxiul succesiunilor nr pare: " + max);
+        System.out.print("Afiseaza diferenta maxima dintre 2 nr succesive: " + maxDiff);
+    }
+}
