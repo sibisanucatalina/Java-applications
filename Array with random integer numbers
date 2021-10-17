@@ -1,0 +1,41 @@
+// how to fill a 2d array java
+public class Ex4
+{
+    public static void main(String[] args)
+    {
+
+        int[][] arrNumbers = new int[5][6];
+        for(int a = 0; a < 5; a++)
+        {
+            for(int b = 0; b < 6; b++)
+            {
+                arrNumbers[a][b] = (int) (Math.random() * 100) ;
+            }
+        }
+        for(int x = 0; x < 5; x++) {
+            for (int y = 0; y < 6; y++) {
+                System.out.print(arrNumbers[x][y] + " ");
+            }
+            System.out.println();
+        }
+        for(int a = 0; a < 5; a++) {
+            Integer sum = 0;
+            for(int b = 0; b < 6; b++) {
+                sum = sum + arrNumbers[a][b] ;
+
+            }
+            System.out.println("Suma rand " + a + ": " + sum + " ");
+        }
+        for(int b = 0; b < 6; b++) {
+            Integer sum = 0;
+            for(int a = 0; a < 5; a++) {
+                sum = sum + arrNumbers[a][b] ;
+
+            }
+            System.out.println("Suma coloana " + b + ": " + sum + " ");
+        }
+
+
+
+    }
+}
